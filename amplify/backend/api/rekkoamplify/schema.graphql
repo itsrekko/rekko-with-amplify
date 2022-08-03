@@ -1,0 +1,40 @@
+type Recommendations @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  text: String
+  usermodelID: ID! @index(name: "byUserModel")
+  products: [Product] @manyToMany(relationName: "ProductRecommendations")
+  Image: AWSURL
+}
+
+type Filters @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  products: [Product] @manyToMany(relationName: "ProductFilters")
+}
+
+type Product @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  used: Boolean
+  Filters: [Filters] @manyToMany(relationName: "ProductFilters")
+  brandID: ID! @index(name: "byBrand")
+  usermodelID: ID! @index(name: "byUserModel")
+  Reviews: [Recommendations] @manyToMany(relationName: "ProductRecommendations")
+  URL: AWSURL
+}
+
+type Brand @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  used: Boolean
+  Products: [Product] @hasMany(indexName: "byBrand", fields: ["id"])
+}
+
+type UserModel @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  username: String
+  createdAt: AWSDateTime
+  profilePicture: String
+  SavedProducts: [Recommendations] @hasMany(indexName: "byUserModel", fields: ["id"])
+  Recommendations: [Recommendations] @hasMany(indexName: "byUserModel", fields: ["id"])
+}

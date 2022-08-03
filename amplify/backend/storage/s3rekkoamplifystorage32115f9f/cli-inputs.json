@@ -1,0 +1,12 @@
+{
+  "resourceName": "s3rekkoamplifystorage32115f9f",
+  "bucketName": "rekko-amplify-storage-32115f9f",
+  "policyUUID": "fb6aabe0",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
