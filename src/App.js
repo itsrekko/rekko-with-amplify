@@ -5,7 +5,7 @@ import './App.css';
 function App({ signOut, user }) {
   return (
     <>
-      <h1>Hello {user.username}</h1>
+      <h1>Hello {user.attributes.email}</h1>
       <button onClick={signOut}>Sign out</button>
     </>
   );
