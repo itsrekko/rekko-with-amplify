@@ -4,7 +4,8 @@ import React, {useReducer} from "react";
 // Update initialGlobalState to defaultGlobalState || localStorage
 
 export const defaultGlobalState = {
-  loggedUser: undefined
+  loggedUser: undefined,
+  username: undefined,
 }
 const globalStateContext = React.createContext(defaultGlobalState);
 const dispatchStateContext = React.createContext(undefined);

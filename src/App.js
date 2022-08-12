@@ -1,21 +1,23 @@
 import React, { useEffect } from 'react';
 import {
   withAuthenticator,
-  Button,
   View,
 } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useGlobalState } from './context/GlobalState';
+import ResponsiveAppBar from "./components/ResponsiveAppBar";
 import Home from './pages/Home';
 import './App.css';
+import WelcomeUser from './pages/WelcomeUser';
 
 function App({ signOut, user }) {
   const [, setUserState] = useGlobalState();
   
   useEffect(() => {
     setUserState({
-      loggedUser: user
+      loggedUser: user,
+      username: undefined
     })
   }, [setUserState, user]); // eslint-disable-next-line
 
@@ -27,14 +29,15 @@ function App({ signOut, user }) {
 
     */
     <View className="App">
-        <Router>
-            <Routes>
-                <Route path = "/" element = {<Home />} />
-            </Routes>
-        </Router>
-        <Button onClick={signOut}>Sign Out</Button>
+      <ResponsiveAppBar signOut={signOut} user={user}/>
+      <Router>
+          <Routes>
+              <Route path = "/" element = {<Home />} />
+              <Route path = "/welcome" element = {<WelcomeUser user={user}/>} />
+          </Routes>
+      </Router>
     </View>
   );
 }
 
-export default withAuthenticator(App);
+export default withAuthenticator(App, true);

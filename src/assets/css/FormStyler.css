@@ -1,0 +1,93 @@
+.user-button .MuiButtonBase-root .MuiButton-root {
+    background-color: #6C5B57;
+    width: 500px;
+}
+
+.user-button .MuiButton-root:hover {
+    background-color: #5e4f4b;
+    width: 500px;
+    outer-height: 30px;
+}
+
+.user-button .MuiButton-sizeLarge {
+    width: 56px;
+}
+
+.user-form {
+    margin-top: 8vh;
+    height: fit-content;
+    width: 710px;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+}
+
+.custom-title {
+    color: #6C5B57;
+    padding-top: 32px;
+    font-size: 38px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
+
+.textfield {
+  background-color: #F5F5F7;
+  width: 500px;
+}
+
+.textfield::label {
+    width: 100%;
+    text-align: center;
+    transform-origin: left;
+}
+
+.textfield::label .Mui-focused {
+    transform-origin: left;
+}
+
+.css-label {
+    color: #A0A5BD;
+}
+
+.css-focused {
+    color: black;
+}
+
+.notched-outline {
+    border-width: 1px;
+    border-color: #F5F5F7 !important;
+}
+
+.css-outlined-input .css-focused .notched-outline {
+    border-color: #F5F5F7 !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .user-form {
+        margin-top: 8vh;
+        height: fit-content;
+        width: 78vw;
+        background-color: #FFFFFF;
+        border-radius: 25px;
+    }
+
+    .textfield {
+        background-color: #F5F5F7;
+        width: 245px;
+    }
+
+    .textfield::label {
+        width: 100%;
+        text-align: center;
+        transform-origin: left;
+    }
+    
+    .textfield::label .Mui-focused {
+        transform-origin: left;
+    }
+
+    .user-button .MuiButton-root {
+        width: 245px;
+    }
+}

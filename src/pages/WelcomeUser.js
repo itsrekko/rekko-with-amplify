@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import CreateUserProfile from "../components/CreateUserProfile";
 
 const WelcomeUser = (props) => {
+    const loggedUser = props.user;
 
     return(
-        <h1>
-            Welcome Page        
-        </h1>
+        <CreateUserProfile user={loggedUser}/>
     );
 }
 
