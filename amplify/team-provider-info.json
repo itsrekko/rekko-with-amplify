@@ -1,4 +1,22 @@
 {
+  "migrateamp": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-rekkoamplify-migrateamp-50653-authRole",
+      "UnauthRoleArn": "arn:aws:iam::032629023661:role/amplify-rekkoamplify-migrateamp-50653-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::032629023661:role/amplify-rekkoamplify-migrateamp-50653-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-rekkoamplify-migrateamp-50653-deployment",
+      "UnauthRoleName": "amplify-rekkoamplify-migrateamp-50653-unauthRole",
+      "StackName": "amplify-rekkoamplify-migrateamp-50653",
+      "StackId": "arn:aws:cloudformation:us-west-2:032629023661:stack/amplify-rekkoamplify-migrateamp-50653/eb25dbe0-16d7-11ed-a261-0a48b7cf13fd",
+      "AmplifyAppId": "d147a891fb272r"
+    },
+    "categories": {
+      "auth": {
+        "rekkoamplify": {}
+      }
+    }
+  },
   "staging": {
     "awscloudformation": {
       "AuthRoleName": "amplify-rekkoamplify-staging-200238-authRole",

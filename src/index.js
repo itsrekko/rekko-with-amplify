@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import GlobalStateProvider from './context/GlobalState';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './configure-amplify';
@@ -8,7 +9,9 @@ import './configure-amplify';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <GlobalStateProvider>
+      <App />
+    </GlobalStateProvider>
   </React.StrictMode>
 );
 
