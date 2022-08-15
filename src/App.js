@@ -9,7 +9,7 @@ import { useGlobalState } from './context/GlobalState';
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
 import Home from './pages/Home';
 import './App.css';
-import WelcomeUser from './pages/WelcomeUser';
+import CreateUserProfile from './pages/CreateUserProfile';
 
 function App({ signOut, user }) {
   const [, setUserState] = useGlobalState();
@@ -33,7 +33,7 @@ function App({ signOut, user }) {
       <Router>
           <Routes>
               <Route path = "/" element = {<Home />} />
-              <Route path = "/welcome" element = {<WelcomeUser user={user}/>} />
+              <Route path = "/welcome" element = {<CreateUserProfile user={user}/>} />
           </Routes>
       </Router>
     </View>

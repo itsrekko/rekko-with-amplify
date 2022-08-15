@@ -4,6 +4,7 @@ import { API } from 'aws-amplify';
 import { listUserModels } from "../graphql/queries";
 import { LoaderWithTheme } from "../components/Loader";
 import { useNavigate } from "react-router-dom";
+import '../assets/css/HomeStyler.css'
 
 export default function Home () {
     const [globalState, setGlobalState] = useGlobalState();
@@ -40,14 +41,14 @@ export default function Home () {
                 console.log("This is a brand new user");
                 navigate(`/welcome`);
             }
-        }, 5000);
+        }, 2000);
 
         // eslint-disable-next-line
       }, [users]);
 
     if (load){
         return (
-            <div>
+            <div className="loader">
                 <LoaderWithTheme/> <br/>
             </div>
         )

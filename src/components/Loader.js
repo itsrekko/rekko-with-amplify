@@ -6,7 +6,7 @@ const theme = {
     components: {
       loader: {
         strokeEmpty: { value: '{colors.neutral.20}' },
-        strokeFilled: { value: '{colors.pink.80}' },
+        strokeFilled: { value: '#6C5B57' },
 
         // sizes
         large: {

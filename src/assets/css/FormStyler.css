@@ -1,24 +1,24 @@
-.user-button .MuiButtonBase-root .MuiButton-root {
-    background-color: #6C5B57;
-    width: 500px;
-}
-
-.user-button .MuiButton-root:hover {
-    background-color: #5e4f4b;
-    width: 500px;
-    outer-height: 30px;
-}
-
-.user-button .MuiButton-sizeLarge {
-    width: 56px;
-}
-
 .user-form {
     margin-top: 8vh;
     height: fit-content;
     width: 710px;
     background-color: #FFFFFF;
     border-radius: 25px;
+}
+
+.create-user-textfield {
+    background-color: #F5F5F7;
+    width: 500px;
+    margin-bottom: '10px';
+    min-height: 56px;
+    max-height: 56px;
+}
+
+.create-user-typography {
+    font-weight: 550;
+    line-height: 21.47px;
+    font-size: 17px;
+    color: #FFFFFF;
 }
 
 .custom-title {
@@ -85,9 +85,5 @@
     
     .textfield::label .Mui-focused {
         transform-origin: left;
-    }
-
-    .user-button .MuiButton-root {
-        width: 245px;
     }
 }

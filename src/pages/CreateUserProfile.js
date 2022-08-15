@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { Button, Card, Grid, Stack, TextField, Typography } from '@mui/material';
+import { Card, Grid, Stack, TextField, Typography } from '@mui/material';
+import { StyledButton } from "../components/StyledButton";
 import { createUserModel } from "../graphql/mutations";
 import { listUserModels } from "../graphql/queries";
 import { API } from 'aws-amplify';
 import { useNavigate } from 'react-router-dom';
 import '../assets/css/FormStyler.css'
 
-function CreateUserProfile(props) {
+const CreateUserProfile = (props) => {
   const loggedUser = props.user;
   const [username, setUserName] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -71,13 +72,8 @@ function CreateUserProfile(props) {
             value={username}
             onChange={handleUserNameChange}
             helperText={errorMessage}
-            className="textfield"
+            className="create-user-textfield"
             variant="outlined"
-            style={{
-                marginBottom: '10px',
-                minHeight: '56px',
-                maxHeight: '56px',
-            }}
             InputLabelProps={{
               classes: {
                 root: "css-label",
@@ -96,27 +92,17 @@ function CreateUserProfile(props) {
               inputMode: 'numeric',
             }}
           />
-          <Button
+          <StyledButton
             id="review-submit"
             variant="contained" 
-            className="user-button"
             onClick={handleSubmit}
-            style={{
-              textTransform: 'none',
-              minHeight: '54px',
-              maxHeight: '54px',
-              marginBottom: '15px'
-            }}
           >
-            <Typography style={{
-                fontWeight: 550,
-                lineHeight: '21.47px',
-                fontSize: '17px',
-                color: '#FFFFFF'
-            }}>
+            <Typography
+              className="create-user-typography"
+            >
                 Join
             </Typography>
-          </Button>
+          </StyledButton>
         </Grid>
       </Card>
     </Stack>

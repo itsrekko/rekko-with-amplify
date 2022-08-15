@@ -9,9 +9,20 @@ import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import rekkoLogo from '../rekkoLogo.svg';
 
 const settings = ['Profile', 'Account', 'Home', 'Logout'];
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: {
+      main: '#6C5B57',
+    },
+  },
+});
+
 
 const ResponsiveAppBar = (props) => {
   const loggedUser = props.user;
@@ -30,8 +41,9 @@ const ResponsiveAppBar = (props) => {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
+    <ThemeProvider theme={darkTheme}>
+      <AppBar position="static">
+      <Container maxWidth="false">
         <Toolbar disableGutters>
           <img src={rekkoLogo} className="App-logo" alt="logo" />
           <Typography
@@ -83,6 +95,7 @@ const ResponsiveAppBar = (props) => {
         </Toolbar>
       </Container>
     </AppBar>
+    </ThemeProvider>
   );
 };
 export default ResponsiveAppBar;
